@@ -17,8 +17,8 @@ ${WELCOME URL}           http://${SERVER}/welcome.html
 ${ERROR URL}             http://${SERVER}/error.html
 ${FORM URL}              http://${SERVER}/Form.html
 ${Complete URL}          http://${SERVER}/Complete.html
-${CHROME_BROWSER_PATH}   ${EXECDIR}${/}ChromeForTesting${/}chrome.exe
-${CHROME_DRIVER_PATH}    ${EXECDIR}${/}ChromeForTesting${/}chromedriver.exe
+${CHROME_BROWSER_PATH}   /usr/bin/google-chrome
+${CHROME_DRIVER_PATH}    /usr/local/bin/chromedriver
 
                         
 
