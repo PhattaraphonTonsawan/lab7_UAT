@@ -17,8 +17,8 @@ ${WELCOME URL}           http://${SERVER}/welcome.html
 ${ERROR URL}             http://${SERVER}/error.html
 ${FORM URL}              http://${SERVER}/Form.html
 ${Complete URL}          http://${SERVER}/Complete.html
-${CHROME_BROWSER_PATH}    ${CHROME_BIN}
-${CHROME_DRIVER_PATH}     ${CHROMEDRIVER_BIN}
+${CHROME_BROWSER_PATH}   %{CHROME_BIN}
+${CHROME_DRIVER_PATH}    %{CHROMEDRIVER_BIN}
 
                         
 
