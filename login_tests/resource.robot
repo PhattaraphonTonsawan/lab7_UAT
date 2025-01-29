@@ -17,8 +17,9 @@ ${WELCOME URL}           http://${SERVER}/welcome.html
 ${ERROR URL}             http://${SERVER}/error.html
 ${FORM URL}              http://${SERVER}/Form.html
 ${Complete URL}          http://${SERVER}/Complete.html
-${CHROME_BROWSER_PATH}    /usr/bin/google-chrome
-${CHROME_DRIVER_PATH}    /usr/local/bin/chromedriver
+${CHROME_BROWSER_PATH}   /usr/bin/google-chrome
+${CHROME_DRIVER_PATH}    /usr/bin/chromedriver
+${CHROME_USER_DATA}      /tmp/chrome-user-data
 
                         
 
@@ -27,6 +28,14 @@ Open Browser To Login Page
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
     Set Variable          ${chrome_options.binary_location}    ${CHROME_BROWSER_PATH}
     Call Method           ${chrome_options}    add_argument    --no-sandbox
+    Call Method           ${chrome_options}    add_argument    --disable-dev-shm-usage
+    Call Method           ${chrome_options}    add_argument    --disable-gpu
+    Call Method           ${chrome_options}    add_argument    --remote-debugging-port=9222
+    Call Method           ${chrome_options}    add_argument    --user-data-dir=${CHROME_USER_DATA}
+    Call Method           ${chrome_options}    add_argument    --headless
+    Call Method           ${chrome_options}    add_argument    --disable-infobars
+    Call Method           ${chrome_options}    add_argument    --disable-popup-blocking
+    Call Method           ${chrome_options}    add_argument    --window-size=1920,1080
 
     ${service}=           Evaluate    sys.modules["selenium.webdriver.chrome.service"].Service(executable_path="${CHROME_DRIVER_PATH}")    sys
     Create Webdriver      Chrome    options=${chrome_options}    service=${service}
