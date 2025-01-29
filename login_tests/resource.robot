@@ -30,7 +30,6 @@ Open Browser To Login Page
     Call Method           ${chrome_options}    add_argument    --no-sandbox
     Call Method           ${chrome_options}    add_argument    --disable-dev-shm-usage
     Call Method           ${chrome_options}    add_argument    --disable-gpu
-    Call Method           ${chrome_options}    add_argument    --remote-debugging-port=9222
     Call Method           ${chrome_options}    add_argument    --user-data-dir=${CHROME_USER_DATA}
     Call Method           ${chrome_options}    add_argument    --headless
     Call Method           ${chrome_options}    add_argument    --disable-infobars
